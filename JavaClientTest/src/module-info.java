@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author gedsa
+ *
+ */
+module javaClientTest {
+}
