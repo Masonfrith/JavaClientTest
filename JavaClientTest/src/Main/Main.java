@@ -2,6 +2,7 @@ package Main;
 
 import client.MyClient;
 
+
 public class Main {
 
 	public static void main(String[] args) throws Exception {
@@ -11,7 +12,7 @@ public class Main {
 		System.out.println("Client now connected to server.\nready to send message, type QUIT to quit.");
 		
 		while(!client.currentMessage.equals("QUIT")) {
-			client.out.println(System.in.read());
+			client.out.println(client.userInput.readLine());
 			client.currentMessage = client.in.readLine();
 			System.out.println("Server: " + client.currentMessage);
 		}

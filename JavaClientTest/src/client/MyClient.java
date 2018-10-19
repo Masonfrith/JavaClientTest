@@ -13,6 +13,7 @@ public class MyClient {
 	public PrintWriter out;
 	public BufferedReader in;
 	public String currentMessage;
+	public BufferedReader userInput;
 	
 
 	public MyClient(String ip, int portNumber) throws Exception {
@@ -42,6 +43,7 @@ public class MyClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
+		this.userInput = new BufferedReader(new InputStreamReader(System.in));
 		this.currentMessage = "";
 	}
 
