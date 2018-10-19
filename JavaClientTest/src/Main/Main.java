@@ -8,6 +8,13 @@ public class Main {
 		System.out.println("Starting up the client");
 		MyClient client = new MyClient();
 		
+		System.out.println("Client now connected to server.\nready to send message, type QUIT to quit.");
+		
+		while(!client.currentMessage.equals("QUIT")) {
+			client.out.println(System.in.read());
+			client.currentMessage = client.in.readLine();
+			System.out.println("Server: " + client.currentMessage);
+		}
 		
 		
 		System.out.println("Client shutting down now.");

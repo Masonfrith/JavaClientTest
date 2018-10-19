@@ -12,6 +12,7 @@ public class MyClient {
 	public Socket clientSocket;
 	public PrintWriter out;
 	public BufferedReader in;
+	public String currentMessage;
 	
 
 	public MyClient(String ip, int portNumber) throws Exception {
@@ -27,8 +28,8 @@ public class MyClient {
 		System.out.println("Client now attempting to connect to server at ip: " + ip + " and port " + portNumber);
 		try {
 			clientSocket = new Socket(ip, portNumber);
-		out = new PrintWriter(clientSocket.getOutputStream(), true);
-		in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+		this.out = new PrintWriter(clientSocket.getOutputStream(), true);
+		this.in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 		// out.println("Hi I am client, I try to talk to you!");
 		} catch (ConnectException e) {
 			e.printStackTrace();
@@ -41,8 +42,7 @@ public class MyClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-		System.out.println("Client now connected to server.\nready to send message, type QUIT to quit.");
-		
+		this.currentMessage = "";
 	}
 
 }
