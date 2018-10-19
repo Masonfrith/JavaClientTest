@@ -9,9 +9,9 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class MyClient {
-	Socket clientSocket;
-	PrintWriter out;
-	BufferedReader in;
+	public Socket clientSocket;
+	public PrintWriter out;
+	public BufferedReader in;
 	
 
 	public MyClient(String ip, int portNumber) throws Exception {
@@ -29,7 +29,7 @@ public class MyClient {
 			clientSocket = new Socket(ip, portNumber);
 		out = new PrintWriter(clientSocket.getOutputStream(), true);
 		in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-		out.println("Hi I am client, I try to talk to you!");
+		// out.println("Hi I am client, I try to talk to you!");
 		} catch (ConnectException e) {
 			e.printStackTrace();
 			System.out.println("Error, could not connect to server using ip: " + ip + " and portNumber " + portNumber);
@@ -41,12 +41,7 @@ public class MyClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-		
-		System.out.println("Client, does it reach this line in connectToServer?");
-		
-		in.close();
-		out.close();
-		clientSocket.close();
+		System.out.println("Client now connected to server.\nready to send message, type QUIT to quit.");
 		
 	}
 
