@@ -22,7 +22,7 @@ public class MyClient {
 	
 	public MyClient() throws Exception {
 		
-		this.connectToServer("localhost", 40008); // a default attempt at connection
+		this.connectToServer("localhost", 40010); // a default attempt at connection
 	}
 	
 	public void connectToServer(String ip, int portNumber) throws Exception {
